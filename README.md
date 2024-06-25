@@ -51,3 +51,22 @@ started on port 5150
 ## Getting help
 
 Check out [a quick tour](https://loco.rs/docs/getting-started/tour/) or [the complete guide](https://loco.rs/docs/getting-started/guide/).
+
+
+## 開発環境構築
+### 1. webdev の postgres と redis を起動しておく
+webdev を使用した。
+
+### 2. database を作成する (myloco_development と今回はした)
+
+### 3. 環境変数を設定する
+```sh
+export DATABASE_URL=postgres://sail:password@localhost:5432/myloco_development
+```
+
+これで、 `./config/development.yaml` の値を変更する
+
+### 4. loco 起動
+```sh
+cargo loco start
+```
