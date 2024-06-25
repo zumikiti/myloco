@@ -2299,6 +2299,8 @@ dependencies = [
 [[package]]
 name = "loco-rs"
 version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c0c8cce052e66e0364b8456e401c73b26d9535f9243492b36ac29114c914c1c3"
 dependencies = [
  "argon2",
  "async-trait",
@@ -2344,32 +2346,6 @@ dependencies = [
  "tower-http",
  "tracing",
  "tracing-subscriber",
- "uuid",
- "validator",
-]
-
-[[package]]
-name = "myloco"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "axum",
- "chrono",
- "eyre",
- "fluent-templates",
- "include_dir",
- "insta",
- "loco-rs",
- "migration",
- "rstest",
- "sea-orm",
- "serde",
- "serde_json",
- "serial_test",
- "tokio",
- "tracing",
- "tracing-subscriber",
- "unic-langid",
  "uuid",
  "validator",
 ]
@@ -2490,6 +2466,32 @@ dependencies = [
  "thiserror",
  "triomphe",
  "uuid",
+]
+
+[[package]]
+name = "myloco"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "axum",
+ "chrono",
+ "eyre",
+ "fluent-templates",
+ "include_dir",
+ "insta",
+ "loco-rs",
+ "migration",
+ "rstest",
+ "sea-orm",
+ "serde",
+ "serde_json",
+ "serial_test",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
+ "unic-langid",
+ "uuid",
+ "validator",
 ]
 
 [[package]]
