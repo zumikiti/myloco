@@ -1,22 +1,22 @@
 #![allow(clippy::missing_errors_doc)]
 #![allow(clippy::unnecessary_struct_initialization)]
 #![allow(clippy::unused_async)]
+use axum::debug_handler;
 use loco_rs::prelude::*;
 use serde::{Deserialize, Serialize};
-use axum::debug_handler;
 
-use crate::models::_entities::comments::{ActiveModel};
+use crate::models::_entities::comments::ActiveModel;
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Params {
     pub content: Option<String>,
     pub article_id: i32,
-    }
+}
 
 impl Params {
     fn update(&self, item: &mut ActiveModel) {
-      item.content = Set(self.content.clone());
-      item.article_id = Set(self.article_id.clone());
+        item.content = Set(self.content.clone());
+        item.article_id = Set(self.article_id.clone());
     }
 }
 
@@ -31,7 +31,5 @@ pub async fn add(State(ctx): State<AppContext>, Json(params): Json<Params>) -> R
 }
 
 pub fn routes() -> Routes {
-    Routes::new()
-        .prefix("comments")
-        .add("/", post(add))
+    Routes::new().prefix("comments").add("/", post(add))
 }

@@ -7,7 +7,6 @@ use crate::models::_entities::{
     comments,
 };
 
-
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Params {
     pub title: Option<String>,
@@ -60,10 +59,7 @@ pub async fn get_one(Path(id): Path<i32>, State(ctx): State<AppContext>) -> Resu
     format::json(load_item(&ctx, id).await?)
 }
 
-pub async fn comments(
-    Path(id): Path<i32>,
-    State(ctx): State<AppContext>,
-) -> Result<Response> {
+pub async fn comments(Path(id): Path<i32>, State(ctx): State<AppContext>) -> Result<Response> {
     let item = load_item(&ctx, id).await?;
     let comments = item.find_related(comments::Entity).all(&ctx.db).await?;
     format::json(comments)

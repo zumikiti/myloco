@@ -1,7 +1,6 @@
 #![allow(clippy::unused_async)]
-use loco_rs::prelude::*;
 use axum::debug_handler;
-
+use loco_rs::prelude::*;
 
 #[debug_handler]
 pub async fn echo(req_body: String) -> String {

@@ -1,6 +1,6 @@
 use loco_rs::cli;
-use myloco::app::App;
 use migration::Migrator;
+use myloco::app::App;
 
 #[tokio::main]
 async fn main() -> eyre::Result<()> {

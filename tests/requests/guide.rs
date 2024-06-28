@@ -1,5 +1,5 @@
-use myloco::app::App;
 use loco_rs::testing;
+use myloco::app::App;
 use serial_test::serial;
 
 #[tokio::test]
