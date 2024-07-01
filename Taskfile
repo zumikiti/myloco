@@ -1,0 +1,32 @@
+#!/bin/bash
+# https://github.com/adriancooney/Taskfile#install
+
+function loco {
+  export DATABASE_URL=postgres://sail:password@localhost:5432/myloco_development
+  cargo loco "$@"
+}
+
+function up {
+  loco start
+}
+
+function test {
+  cargo test "$@"
+}
+
+function start {
+  echo "start task not implemented"
+}
+
+function default {
+  help
+}
+
+function help {
+    echo "$0 <task> <args>"
+    echo "Tasks:"
+    compgen -A function | cat -n
+}
+
+TIMEFORMAT="Task completed in %3lR"
+time ${@:-default}
