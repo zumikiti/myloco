@@ -65,6 +65,7 @@ impl Hooks for App {
 
     fn register_tasks(tasks: &mut Tasks) {
         tasks.register(tasks::seed::SeedData);
+        tasks.register(tasks::user_report::UserReport);
     }
 
     async fn truncate(db: &DatabaseConnection) -> Result<()> {
